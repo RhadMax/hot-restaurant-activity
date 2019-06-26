@@ -36,7 +36,7 @@ app.get("/reserve", (req, res) => {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-app.post("/reserve", (req, res) => {
+app.post("/api/reserve", (req, res) => {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body parsing middleware
     var newReserve = req.body;
@@ -52,7 +52,7 @@ app.post("/reserve", (req, res) => {
         tables.push(newReserve)
     }
 
-    // res.json(newCharacter);
+    res.json(newReserve);
 });
 
 // Starts the server to begin listening
